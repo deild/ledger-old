@@ -31,7 +31,7 @@ var registerCmd = &cobra.Command{
 	Use:   "register",
 	Short: "Show all transactions with running total",
 	Long: `List all postings matching the report-query This is one of the most common commands, and can be used to provide a variety of useful reports.`,
-	Aliases:{"reg","r"},
+	Aliases:[]string{"reg","r"},
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: implement
 		fmt.Println("Not yet implemented")

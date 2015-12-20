@@ -31,7 +31,7 @@ var balanceCmd = &cobra.Command{
 	Use:   "balance",
 	Short: "Show account balances",
 	Long: `Produces a balance report showing totals for all matching accounts, and aggregate totals for parents of those accounts.`,
-	Aliases:{"bal","b"},
+	Aliases:[]string{"bal","b"},
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: implement
 		fmt.Println("Not yet implemented")
