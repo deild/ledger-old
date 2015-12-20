@@ -23,7 +23,10 @@ package cmd
 import (
 	"fmt"
 
+	"bufio"
 	"github.com/spf13/cobra"
+	"os"
+	"strings"
 )
 
 // printCmd represents the print command
@@ -34,11 +37,35 @@ var printCmd = &cobra.Command{
 This can be used to extract subsets from a Ledger file to transfer to other files.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: implement
-		fmt.Println("Not yet implemented")
+		if LedgerFile != "" {
+			ledgerFileReader, err := os.Open(LedgerFile)
+			if err != nil {
+				fmt.Println(err)
+				os.Exit(1)
+			} else {
+				defer ledgerFileReader.Close()
+				// read and print file
+				scan := bufio.NewScanner(ledgerFileReader)
+				scan.Split(bufio.ScanLines)
+				for scan.Scan() {
+					line := scan.Text()
+					switch {
+					case strings.HasPrefix(line, ";"): //ingored
+					case strings.HasPrefix(line, "#"): //ingored
+					case strings.HasPrefix(line, "%"): //ingored
+					case strings.HasPrefix(line, "|"): //ingored
+					case strings.HasPrefix(line, "*"): //ingored
+					default:
+						fmt.Println(line)
+					}
+				}
+			}
+		} else {
+			cmd.Help()
+		}
 	},
 }
 
 func init() {
 	RootCmd.AddCommand(printCmd)
-
 }
