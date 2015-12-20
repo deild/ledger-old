@@ -22,6 +22,9 @@ package main
 
 import "github.com/deild/ledger/cmd"
 
+var version string
+
 func main() {
+	cmd.Version=cmd.Version+version
 	cmd.Execute()
 }

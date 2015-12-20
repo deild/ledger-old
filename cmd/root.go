@@ -27,10 +27,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var Version string = "0.1.0"
+
 var LedgerFile string
 var printVersion bool
-
-const version string = "0.1.0-dev"
 
 const versionMessage = `Ledger %s, the command-line accounting tool
 
@@ -49,7 +49,7 @@ It is only a reporting tool, which means it never modifies your data files,
 but it does offers a large selection of reports, and different ways to customize them to your liking.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if printVersion {
-			fmt.Printf(versionMessage, version)
+			fmt.Printf(versionMessage, Version)
 			os.Exit(0)
 		}
 	},
