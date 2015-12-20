@@ -1,0 +1,3 @@
+package: github.com/deild/ledger
+import:
+- package: github.com/spf13/cobra

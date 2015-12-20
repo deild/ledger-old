@@ -23,7 +23,8 @@ but it does offers a large selection of reports, and different ways to customize
 ## Dependencies
 
 [Cobra - Steve Francia](http://www.github.com/spf13/cobra)  
-[Viper - Steve Francia](http://www.github.com/spf13/viper)  
+
+[Glide](https://github.com/Masterminds/glide)
 
 ## Inspirations
 
