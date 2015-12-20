@@ -9,6 +9,7 @@
 ```
 
 [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/deild/ledger/master/LICENSE)
+[![Travis CI Build Status](https://travis-ci.org/deild/ledger.svg?branch=master)](https://travis-ci.org/deild/ledger)
 
 A Go Programming Language lexer and parser CLI to reporting transactions from a ledger file, 
 similar to the [Ledger](http://ledger-cli.org) command line tool written in C++.

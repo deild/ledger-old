@@ -17,7 +17,7 @@ install:
 
 script:
   - glide install
-  - go test -v ./...
+  - go test -v ./ ./cmd/
   - go build -ldflags "-X main.version=-build:$(git rev-parse HEAD)"
   - ./ledger --version
 
