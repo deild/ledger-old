@@ -27,17 +27,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var ledgerFile string
-var version bool
+var LedgerFile string
+var printVersion bool
 
-const versionNumber = "0.1.0"
+const version string = "0.1.0-dev"
 
 const versionMessage = `Ledger %s, the command-line accounting tool
 
 Copyright (c) 2015, Samuel Marcaille.  All rights reserved.
 
 This program is made available under the terms of the MIT License.
-See LICENSE file included with the distribution for details and disclaimer.`
+See LICENSE file included with the distribution for details and disclaimer.
+`
 
 // This represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
@@ -47,8 +48,8 @@ var RootCmd = &cobra.Command{
 It is only a reporting tool, which means it never modifies your data files,
 but it does offers a large selection of reports, and different ways to customize them to your liking.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		if version {
-			fmt.Printf(versionMessage, versionNumber)
+		if printVersion {
+			fmt.Printf(versionMessage, version)
 			os.Exit(0)
 		}
 	},
@@ -65,9 +66,9 @@ func Execute() {
 
 func init() {
 
-	//RootCmd.PersistentFlags().BoolP("help", "h", false, "Print summary of all options.")
-	RootCmd.PersistentFlags().StringVarP(&ledgerFile, "file", "f", "", "Read FILE as a ledger file.")
+	RootCmd.PersistentFlags().StringVarP(&LedgerFile, "file", "f", "", "Read FILE as a ledger file.")
 
-	RootCmd.Flags().BoolVarP(&version, "version", "v", false, "Print version information and exit.")
+	RootCmd.Flags().BoolVarP(&printVersion, "version", "v", false, "Print version information and exit.")
 
 }
+

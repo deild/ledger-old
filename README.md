@@ -10,7 +10,7 @@
 
 [![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/deild/ledger/master/LICENSE)
 
-A Go lexer and parser CLI to reporting transactions from a ledger file, 
+A Go Programming Language lexer and parser CLI to reporting transactions from a ledger file, 
 similar to the [Ledger](http://ledger-cli.org) command line tool written in C++.
 
 **Double-entry accounting system with a command-line reporting interface.**
@@ -23,8 +23,6 @@ but it does offers a large selection of reports, and different ways to customize
 ## Dependencies
 
 [Cobra - Steve Francia](http://www.github.com/spf13/cobra)  
-
-[Glide](https://github.com/Masterminds/glide)
 
 ## Inspirations
 
